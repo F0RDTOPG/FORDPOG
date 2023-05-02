@@ -1,0 +1,11 @@
+services:
+  - name: web
+    dockerfile: Dockerfile
+    env:
+      - key: DJANGO_SECRET_KEY
+        # Enter your Django secret key here
+        value: <django-insecure-!y(l8=1v6t1cz$19*v0b3*f$e(k!k%vw$_5vh8=&#*bk%0pbq=>
+    # Replace `python manage.py runserver 0.0.0.0:8000` with your start command
+    startCommand: python manage.py runserver 192.168.1.2
+    # Replace `python manage.py collectstatic --noinput` with any other command(s) you need to run before starting the web server
+    buildCommand: python manage.py collectstatic --noinput
