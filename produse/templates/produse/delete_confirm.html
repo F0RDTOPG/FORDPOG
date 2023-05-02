@@ -1,0 +1,46 @@
+{% extends 'produse/base.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Confirm Delete</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">Chiar nu vrei?</p>
+        <form action="{% url 'delete' product.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger mr-2">Yes, delete</button>
+          <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .card-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+    .btn-danger:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+  </style>
+{% endblock %}
