@@ -1,0 +1,16 @@
+# ignore compiled binaries
+*.exe
+*.dll
+*.pyc
+
+# ignore log files
+*.log
+
+# ignore temporary files
+*.tmp
+*.bak
+
+# ignore system files and directories
+.DS_Store
+Thumbs.db
+__pycache__/
